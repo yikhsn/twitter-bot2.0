@@ -45,7 +45,10 @@ const getAyat = (data) => {
 	const ayat = resAyat.replace(/"/g, "'").replace(/`/g, "'");
 	const attAyat = resAttAyat.replace(/"/g, "'").replace(/`/g, "'");
   
-  return '"' + ayat + '"' + ' ' + attAyat;
+  return `"${ayat}"
+  
+
+${attAyat}`;
 };
 
 const getLink = async(data) => {
@@ -90,7 +93,7 @@ const controlTweet = async() => {
   
   const data = await getTweet();
 
-  const tweet = data.ayat + ' ' + data.link;
+  const tweet = data.ayat + ' —— ' + data.link;
   
   tweetIt(tweet);  
 };
